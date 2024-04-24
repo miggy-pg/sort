@@ -44,10 +44,9 @@ console.log(charactersCollection.data);
 
 ### Interfaces vs Abstract Classes
 
-|----------------------------- | -------------------------------------------|
-|Interfaces | Sets up a contract between different classes |
-| \ | Use when we have a very different objects that we want to work together |
-|\ | Promotes loose coupling |
-| Inheritance/ Abstract Classes | Sets up a contract between different classes |
-| \ | Use when we are tryng to build up a defintion of an object |
-| \ | Strongly couples classes together |
+| Interfaces | Sets up a contract between different classes |
+| | Use when we have very different objects that we want to work together |
+| | Promotes loose coupling |
+| Inheritance/Abstract Classes | Sets up a hierarchy where classes share common characteristics |
+| | Use when we are trying to build a definition of an object |
+| | Strongly couples classes together |

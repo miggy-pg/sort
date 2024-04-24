@@ -20,15 +20,20 @@ Take all the methods from 'sorter' amd add them to the target class
 This is convenient in a way that instead of calling 'length', 'compare', 'swap', and 'sort' function, we will have a centralized function that we can call.
 
 ```javascript
-// So instead of using 'sort()',
+// So instead of using 'sort()' from an instance of Sorter()
 const numbersCollection = new NumbersCollection([10, 3, -5, 0]);
-const sorter = new Sorter(numbersCollection);
+const sorter = new Sorter(numbersCollection); // Sorter instance here
 sorter.sort();
 console.log(numbersCollection.data);
 
 const charactersCollection = new CharactersCollection("Xaayb");
-const sorterCharacters = new Sorter(charactersCollection);
+const sorterCharacters = new Sorter(charactersCollection); // Sorter instance here as well
 sorterCharacters.sort();
+console.log(charactersCollection.data);
+
+// We will only need to call 'sort' property in the class itself (line 36)
+const charactersCollection = new CharactersCollection("Xaayb");
+charactersCollection.sort();
 console.log(charactersCollection.data);
 ```
 
@@ -44,9 +49,14 @@ console.log(charactersCollection.data);
 
 ### Interfaces vs Abstract Classes
 
-| Interfaces | Sets up a contract between different classes |
-| | Use when we have very different objects that we want to work together |
-| | Promotes loose coupling |
-| Inheritance/Abstract Classes | Sets up a hierarchy where classes share common characteristics |
-| | Use when we are trying to build a definition of an object |
-| | Strongly couples classes together |
+#### Interfaces
+
+- Sets up a contract between different classes
+- Use when we have very different objects that we want to work together
+- Promotes loose coupling
+
+#### Inheritance/Abstract Classes
+
+- Sets up a hierarchy where classes share common characteristics
+- Use when we are trying to build a definition of an object
+- Strongly couples classes together

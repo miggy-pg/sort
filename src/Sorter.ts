@@ -1,5 +1,4 @@
-import { NumbersCollection } from "./NumberCollection";
-
+//  This interface is not being used since we used 'abstract
 interface Sortable {
   length: number;
   compare(leftIndex: number, rightIndex: number): boolean;
@@ -12,6 +11,7 @@ export abstract class Sorter {
   abstract swap(leftIndex: number, rightIndex: number): void;
   abstract length: number;
 
+  // NOTE: This noted line below were implemented before we used 'abstract' property declarations (line 11 - 13)
   // recall that the ''public'' keyword is a shortcut to create a property with the same name and type as the constructor argument
   // so the above line is the same as:
   // collection: numbers[];

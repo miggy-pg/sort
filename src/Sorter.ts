@@ -6,8 +6,12 @@ interface Sortable {
   swap(leftIndex: number, rightIndex: number): void;
 }
 
-export class Sorter {
-  constructor(public collection: Sortable) {}
+export abstract class Sorter {
+  // 'abstract' means that these function/field will at some point in the exist
+  abstract compare(leftIndex: number, rightIndex: number): boolean;
+  abstract swap(leftIndex: number, rightIndex: number): void;
+  abstract length: number;
+
   // recall that the ''public'' keyword is a shortcut to create a property with the same name and type as the constructor argument
   // so the above line is the same as:
   // collection: numbers[];
@@ -15,12 +19,12 @@ export class Sorter {
   //   this.collection = collection;
 
   sort(): void {
-    const length = this.collection.length;
+    const { length } = this;
 
     for (let i = 0; i < length; i++) {
       for (let j = 0; j < length - i - 1; j++) {
-        if (this.collection.compare(j, j + 1)) {
-          this.collection.swap(j, j + 1);
+        if (this.compare(j, j + 1)) {
+          this.swap(j, j + 1);
         }
       }
     }
